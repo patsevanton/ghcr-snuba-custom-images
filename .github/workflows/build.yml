@@ -33,7 +33,7 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
-            --build-arg SENTRY_IMAGE=getsentry/snuba:${{ matrix.SNUBA_VERSION }} \
+            --build-arg SNUBA_VERSION=getsentry/snuba:${{ matrix.SNUBA_VERSION }} \
             -t $REGISTRY/${{ env.IMAGE_NAME }}:${{ matrix.SNUBA_VERSION }} .
 
       - name: Push Docker image
